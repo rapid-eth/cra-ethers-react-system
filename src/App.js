@@ -3,13 +3,31 @@ import { withEthers } from 'ethers-react-system';
 
 const App = ({ ethers }) => {
   useEffect(() => {
-    props.ethers.generateWallet()
+    ethers.generateWallet()
   })
-  console.log(Object.keys(ethers))
+
   console.log(ethers)
+
   return (
-    <div>
-      <a href="https://create-react-app.dev/">CRA</a> + <a href="https://github.com/rapid-eth/ethers-react-system">ethers-react-system</a>
+    <div style={{margin: '0 auto', width: 600}}>
+      <h4>
+        <a href="https://create-react-app.dev/">CRA</a> + <a href="https://github.com/rapid-eth/ethers-react-system">ethers-react-system</a>
+      </h4>
+
+      <h5>Ethers Provider</h5>
+      {Object.entries(ethers).map(([key, value]) => {
+        return (
+          <details key={key}>
+            <summary>
+              {key}
+            </summary>
+            <pre>
+              {JSON.stringify(value, null, 2)}
+            </pre>
+          </details>
+        )
+      })
+      }
     </div>
   )
 }
