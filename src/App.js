@@ -1,26 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { withEthers } from 'ethers-react-system';
 
-function App() {
+const App = ({ ethers }) => {
+  useEffect(() => {
+    props.ethers.generateWallet()
+  })
+  console.log(Object.keys(ethers))
+  console.log(ethers)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <a href="https://create-react-app.dev/">CRA</a> + <a href="https://github.com/rapid-eth/ethers-react-system">ethers-react-system</a>
     </div>
-  );
+  )
 }
 
-export default App;
+export default withEthers(App);

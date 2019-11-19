@@ -1,5 +1,5 @@
 {
-  "name": "ethers-react-system-experiment",
+  "name": "cra-ethers-react-system",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
