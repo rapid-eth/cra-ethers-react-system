@@ -16,6 +16,7 @@ const App = ({ ethers }) => {
 
       <h5>Ethers Provider</h5>
       {Object.entries(ethers).map(([key, value]) => {
+        if (key === 'provider') return null; // provider is circular, skip to prevent an RTE
         return (
           <details key={key}>
             <summary>
